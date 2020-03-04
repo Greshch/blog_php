@@ -8,6 +8,15 @@
     <title>My Blog</title>
 </head>
 <body>
+    <h1>Заголовок</h1>
+    <h2>Статья 1</h2>
+    <?php echo 'Опубликовано: '.date("d M Y"); ?>
 
+    <h2>Статья 1</h2>
+    <?php echo 'Опубликовано: '.date("d M Y", strtotime("04 Sep 2008")); ?>
+
+    <footer>
+        <p>Мой первый блог &nbsp; &copy; <?php echo date("Y"); ?></p>
+    </footer>
 </body>
 </html>
