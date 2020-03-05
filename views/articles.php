@@ -11,6 +11,8 @@
 <body>
 <div class="container">
     <h1>Мой первый Блог</h1>
+    <a href="admin/index.php">Панель администратора</a>
+    <br><br><br>
     <div class="article">
         <?php foreach ($articles as $article) { ?>
 
