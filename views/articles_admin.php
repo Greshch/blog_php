@@ -15,12 +15,12 @@
         <th></th>
     </tr>
 
-    <?php foreach ($articles as $item) : ?>
+    <?php foreach ($articles as $article) : ?>
         <tr>
-            <td>2015-01-01</td>
-            <td>Заголовок 1</td>
-            <td><a href="#">Редактировать</a></td>
-            <td><a href="#">Удалить</a></td>
+            <td><?= $article['date'] ?></td>
+            <td><?= $article['title'] ?></td>
+            <td><a href="index.php?action=edit&id=<?= $article['id'] ?>">Редактировать</a></td>
+            <td><a href="index.php?action=delete&id=<?= $article['id'] ?>">Удалить</a></td>
         </tr>
     <?php endforeach; ?>
 </table>
