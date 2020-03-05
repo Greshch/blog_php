@@ -6,4 +6,4 @@ require_once ("../models/articles.php");
 $link = db_connect();
 $articles = articles_all($link);
 include ("../views/articles_admin.php");
-echo "admin panel<br>";
+/*echo "admin panel<br>";*/

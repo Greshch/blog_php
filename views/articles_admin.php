@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Table</title>
+    <link href="../style.css" rel="stylesheet">
 </head>
 <body>
 
+<h1>Мой первый Блог</h1>
+<h2><a href="index.php?action=add">Добавить статью</a></h2>
 
-<table border="1">
+<table class="admin-table" >
     <tr>
         <th>Дата</th>
         <th>Заголовок</th>
