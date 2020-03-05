@@ -18,10 +18,17 @@ function articles_all($link)
    return $articles;
 }
 
-function articles_get($id)
+function articles_get($link, $id)
 {
-    return ['id' => 1, 'title' => "Это простой заголовок" , 'date' => "2015-01-01",
-        'content' => "Здесь будет статья"];
+    /*return ['id' => 1, 'title' => "Это простой заголовок" , 'date' => "2015-01-01",
+        'content' => "Здесь будет статья"];*/
+    $query = sprintf("SELECT * FROM articles WHERE id=%d", (int)$id);
+    $result = mysqli_query($link, $query);
+    if (!$result) {
+        die(mysqli_error($link));
+    }
+    $article = mysqli_fetch_assoc($result);
+    return $article;
 }
 
 function articles_new($title, $date, $content)

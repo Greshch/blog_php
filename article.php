@@ -1,9 +1,13 @@
 <?php
 
-
 require_once("database.php");
 require_once("models/articles.php");
 
-$article = articles_get($_GET['id']);
+$link = db_connect();
+$article = articles_get($link, $_GET['id']);
+
+/*echo "<pre>";
+print_r($article);
+echo "</pre>";*/
 
 include ("views/article.php");
