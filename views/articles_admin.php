@@ -15,27 +15,14 @@
         <th></th>
     </tr>
 
-    <tr>
-        <td>2015-01-01</td>
-        <td>Заголовок 1</td>
-        <td><a href="#">Редактировать</a></td>
-        <td><a href="#">Удалить</a></td>
-    </tr>
-
-    <tr>
-        <td>2015-01-01</td>
-        <td>Заголовок 2</td>
-        <td><a href="#">Редактировать</a></td>
-        <td><a href="#">Удалить</a></td>
-    </tr>
-
-    <tr>
-        <td>2015-01-01</td>
-        <td>Заголовок 3</td>
-        <td><a href="#">Редактировать</a></td>
-        <td><a href="#">Удалить</a></td>
-    </tr>
-
+    <?php foreach ($articles as $item) : ?>
+        <tr>
+            <td>2015-01-01</td>
+            <td>Заголовок 1</td>
+            <td><a href="#">Редактировать</a></td>
+            <td><a href="#">Удалить</a></td>
+        </tr>
+    <?php endforeach; ?>
 </table>
 
 </body>
