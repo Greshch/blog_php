@@ -11,7 +11,7 @@
 
 <h1>Мой первый Блог</h1>
 
-<form action=".../views/article_admin.php" method="get" class="form-item">
+<form action="../views/article_admin.php" method="get" class="form-item">
     <label>Название<br>
     <input type="text" name="title" autofocus></label><br>
     <label>Дата<br>
