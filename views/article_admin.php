@@ -14,11 +14,11 @@
 
 <form action="index.php?action=add" method="post" class="form-item">
     <label>Название<br>
-    <input type="text" name="title" autofocus required></label><br>
+    <input type="text" name="title" autofocus required value="<?= $article['title'] ?>"></label><br>
     <label>Дата<br>
-    <input type="date" name="date" required></label><br>
+    <input type="date" name="date" required value="<?= $article['date'] ?>"></label><br>
     <label>Контент<br>
-    <textarea name="content" required></textarea></label><br>
+    <textarea name="content" required><?= $article['content'] ?></textarea></label><br>
     <input type="submit" value="Сохранить">
 </form>
 
