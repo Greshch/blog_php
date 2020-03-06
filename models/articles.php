@@ -57,9 +57,9 @@ function articles_new($link, $title, $date, $content)
     return true;
 }
 
-function articles_edit($id, $title, $date, $content)
+function articles_edit($link, $id, $title, $date, $content)
 {
-
+    echo __FILE__. " ". __METHOD__. "<br>";
 }
 
 function articles_delete($id)

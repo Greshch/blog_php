@@ -30,6 +30,28 @@ if ($action == "add") {
         header("Location: index.php");
     }
     include ("../views/article_admin.php");
+} else if ($action == "edit") {
+
+    echo "action==edit!<br>";
+    echo "<pre>";
+    print_r($_GET);
+    echo "</pre>";
+
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+
+    if (!isset($_GET['id'])) {
+        header("Location: index.php");
+    }
+    $id = (int)$_GET['id'];
+    if (!empty($_POST && $id > 0)) {
+        articles_edit($link, $id, $_POST['title'], $_POST['date'], $_POST['content']);
+        header("Location: index.php");
+    }
+    $article = articles_get($link, $id);
+    include ("views/articles_admin.php");
+
 } else {
     $articles = articles_all($link);
     include ("../views/articles_admin.php");
