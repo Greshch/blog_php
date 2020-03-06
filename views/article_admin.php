@@ -7,17 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add</title>
 </head>
+
 <body>
 
 <h1>Мой первый Блог</h1>
 
-<form action="index.php" method="get" class="form-item">
+<form action="index.php?action=add" method="post" class="form-item">
     <label>Название<br>
-    <input type="text" name="title" autofocus></label><br>
+    <input type="text" name="title" autofocus required></label><br>
     <label>Дата<br>
-    <input type="date" name="date"></label><br>
+    <input type="date" name="date" required></label><br>
     <label>Контент<br>
-    <textarea name="content"></textarea></label><br>
+    <textarea name="content" required></textarea></label><br>
     <input type="submit" value="Сохранить">
 </form>
 
