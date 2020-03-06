@@ -17,17 +17,17 @@ print_r($_GET);
 echo "</pre>";*/
 
 if ($action == "add") {
-    if (!empty($_GET)) {
-        echo "FILL<br>";
+    if (!empty($_POST)) {
+        /*echo "FILL<br>";
         echo "<pre>";
         print_r($_GET);
         echo "</pre>";
         echo "FILL<br>";
         echo "<pre>";
         print_r($_POST);
-        echo "</pre>";
-        //articles_new($link, $_GET['title'], $_GET['date'], $_GET['content']);
-        //header("Location: index.php");
+        echo "</pre>";*/
+        articles_new($link, $_POST['title'], $_POST['date'], $_POST['content']);
+        header("Location: index.php");
     }
     include ("../views/article_admin.php");
 } else {
