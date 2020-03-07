@@ -18,7 +18,8 @@
 
             <h2><a href="article.php?id=<?=$article['id']?>"><?= $article['title'] ?></a></h2>
             <p>Опубликовано: <?= $article['date'] ?></p>
-            <p><?= $article['content']?></p>
+            <p><?= $article['title']?></p>
+            <p><?= articles_intro($article['content'])?></p>
         <?php }?>
     </div>
 

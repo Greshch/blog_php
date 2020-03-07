@@ -101,3 +101,8 @@ function articles_delete($link, $id)
     }
     return mysqli_affected_rows($link);
 }
+
+function articles_intro($text, $len = 300)
+{
+    return mb_substr($text, 0, $len);
+}
