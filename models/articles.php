@@ -59,7 +59,32 @@ function articles_new($link, $title, $date, $content)
 
 function articles_edit($link, $id, $title, $date, $content)
 {
-    echo __FILE__. " ". __METHOD__. "<br>";
+    /*echo __FILE__." ".__METHOD__."<br>";
+    $file = fopen('log.txt', 'w');
+    fwrite($file, __FILE__." ".__METHOD__);
+    fclose($file);*/
+    $title = trim($title);
+    $date = trim($date);
+    $content = trim($content);
+    $id = (int)$id;
+
+    if ($title == "") {
+        return false;
+    }
+
+    $sql = "UPDATE article SET title='%s', date='%s', content='%s' WHERE id='%d';";
+    $query = sprintf($sql,
+        mysqli_real_escape_string($link, $title),
+        mysqli_real_escape_string($link, $date),
+        mysqli_real_escape_string($link, $content),
+        $id
+    );
+    $result = mysqli_query($link, $query);
+
+    if (!$result) {
+        die(mysqli_error($link));
+    }
+    return mysqli_affected_rows($link);
 }
 
 function articles_delete($id)
