@@ -72,7 +72,7 @@ function articles_edit($link, $id, $title, $date, $content)
         return false;
     }
 
-    $sql = "UPDATE article SET title='%s', date='%s', content='%s' WHERE id='%d';";
+    $sql = "UPDATE articles SET title='%s', date='%s', content='%s' WHERE id='%d';";
     $query = sprintf($sql,
         mysqli_real_escape_string($link, $title),
         mysqli_real_escape_string($link, $date),
