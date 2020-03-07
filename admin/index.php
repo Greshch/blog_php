@@ -31,16 +31,6 @@ if ($action == "add") {
     }
     include ("../views/article_admin.php");
 } else if ($action == "edit") {
-
-    echo "action==edit!<br>";
-    echo "<pre>";
-    print_r($_GET);
-    echo "</pre>";
-
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-
     if (!isset($_GET['id'])) {
         header("Location: index.php");
     }
@@ -50,9 +40,13 @@ if ($action == "add") {
         header("Location: index.php");
     }
     $article = articles_get($link, $id);
-    echo "id = $id<br>";
+    //echo "id = $id<br>";
     include ("../views/article_admin.php");
 
+} else if ($action == "delete") {
+    $id = $_GET['id'];
+    $article = articles_delete($id);
+    header("Location: index.php");
 } else {
     $articles = articles_all($link);
     include ("../views/articles_admin.php");
