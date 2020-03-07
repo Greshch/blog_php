@@ -33,10 +33,6 @@ function articles_get($link, $id)
 
 function articles_new($link, $title, $date, $content)
 {
-    echo __FILE__." ". __METHOD__."<br>";
-    echo "title -> ".$title."<br>";
-    echo "date -> ".$date."<br>";
-    echo "content -> ".$content."<br>";
     $title = trim($title);
     $content = trim($content);
 
