@@ -45,7 +45,7 @@ if ($action == "add") {
 
 } else if ($action == "delete") {
     $id = $_GET['id'];
-    $article = articles_delete($id);
+    $article = articles_delete($link, $id);
     header("Location: index.php");
 } else {
     $articles = articles_all($link);

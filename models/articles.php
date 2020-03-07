@@ -87,7 +87,17 @@ function articles_edit($link, $id, $title, $date, $content)
     return mysqli_affected_rows($link);
 }
 
-function articles_delete($id)
+function articles_delete($link, $id)
 {
-
+    $id = (int)$id;
+    if ($id == 0) {
+        return false;
+    }
+    $sql = "DELETE FROM articles WHERE id='%d';";
+    $query = sprintf($sql,$id);
+    $result = mysqli_query($link,$id);
+    if (!$result) {
+        die(mysqli_error($link));
+    }
+    return mysqli_affected_rows($link);
 }
